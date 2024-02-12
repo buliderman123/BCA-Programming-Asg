@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3-Project</title>
+    <style>  
+        h4 {
+            font-size: 40px;
+            font-family: 'Arial Narrow', sans-serif;
+            font-weight: normal;
+            color: red;
+            text-align: center;
+            /*Title Colour*/
+        }
+
+        .marquee {
+            color: blue;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+            /*Sliding text*/
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .navbar { /*Nav Bar*/
+            overflow: hidden;
+            background-color: #333;
+            text-align: center; /* Center the navigation links */
+        }
+
+        .navbar a {
+            display: inline-block; /* Change from float to inline-block for better alignment */
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s; /* Add transition effect for smooth hover */
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>BCA Academy</h4><!-- Heading Title -->
+    <div class="marquee">
+        <p>Vision: To be a leader in education and research, for a future-ready built environment. Mission: To provide quality training, learning and research programmes for a future-ready built environment.</p>
+    </div>
+    <div class="navbar">
+        <a href="#student1">Student 1</a>
+        <a href="#student2">Student 2</a>
+        <a href="#student3">Student 3</a>
+    </div>
+
+    <!-- Content for each student -->
+    <div id="student1">
+        <h2>Student 1</h2>
+        <p>This is the content for Student 1.</p>
+    </div>
+
+    <div id="student2">
+        <h2>Student 2</h2>
+        <p>This is the content for Student 2.</p>
+    </div>
+
+    <div id="student3">
+        <h2>Student 3</h2>
+        <p>This is the content for Student 3.</p>
+    </div>
+</body>
+</html>
