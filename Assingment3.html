@@ -1,107 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P3-Project</title>
-    <style>  
+    <title>BCA Academy Project</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
         h4 {
-            font-size: 40px;
+            font-size: 3em;
             font-family: 'Arial Narrow', sans-serif;
             font-weight: normal;
             color: red;
             text-align: center;
-            /*Title Colour*/
+        }
+
+        .marquee-container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
         }
 
         .marquee {
             color: blue;
-            font-size: 18px;
+            font-size: 1em;
             font-family: Arial, sans-serif;
-            overflow: hidden;
             white-space: nowrap;
             animation: marquee 20s linear infinite;
-            /*Sliding text*/
         }
 
         @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
-        .navbar { /*Nav Bar*/
-            overflow: hidden;
-            background-color: #333;
-            text-align: center; /* Center the navigation links */
-        }
-
-        .navbar a {
-            display: inline-block; /* Change from float to inline-block for better alignment */
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            transition: background-color 0.3s; /* Add transition effect for smooth hover */
-        }
-
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+        .clock-container {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .clock {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            background-color: #fff;
+            border: 2px solid #333;
+        }
+
+        .hand {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 5px;
+            transform-origin: 50% 100%;
+        }
+
+        .hour-hand {
+            width: 6px;
+            height: 40px;
+            top: 50%;
+            left: 50%;
             background-color: #333;
-            color: white;
-            font-size: 24px;
-            font-family: 'Arial Narrow', sans-serif; /* Custom clock style */
-            border-radius: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translate(-50%, -100%) rotate(90deg);
+        }
+
+        .minute-hand {
+            width: 4px;
+            height: 60px;
+            top: 50%;
+            left: 50%;
+            background-color: #333;
+            transform: translate(-50%, -100%) rotate(90deg);
+        }
+
+        .second-hand {
+            width: 2px;
+            height: 70px;
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(90deg);
+        }
+
+        #students-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
     </style>
 </head>
 
 <body>
-    <div class="clock" id="clock"></div>
-    <h4>BCA Academy</h4><!-- Heading Title -->
-    <div class="marquee">
-        <p>Vision: To be a leader in education and research, for a future-ready built environment. Mission: To provide quality training, learning and research programmes for a future-ready built environment.</p>
-    </div>
-    <div class="navbar">
-        <a href="#student1">Student 1</a>
-        <a href="#student2">Student 2</a>
-        <a href="#student3">Student 3</a>
+    <div class="container">
+        <div class="clock-container" id="clock">
+            <div class="clock">
+                <div class="hand hour-hand" id="hourHand"></div>
+                <div class="hand minute-hand" id="minuteHand"></div>
+                <div class="hand second-hand" id="secondHand"></div>
+            </div>
+        </div>
+        <h4 class="mt-4">BCA Academy</h4>
+        <div class="marquee-container">
+            <div class="marquee">
+                <p>Vision: To be a leader in education and research, for a future-ready built environment. Mission: To provide quality training, learning and research programmes for a future-ready built environment.</p>
+            </div>
+        </div>
+
+        <!-- Content for each student -->
+        <div id="students-container">
+            <a class="nav-link" href="#student1">Student 1</a>
+            <a class="nav-link" href="#student2">Student 2</a>
+            <a class="nav-link" href="#student3">Student 3</a>
+        </div>
+
+        <div id="student1">
+            <h2>Student 1</h2>
+            <p>This is the content for Student 1.</p>
+        </div>
+
+        <div id="student2">
+            <h2>Student 2</h2>
+            <p>This is the content for Student 2.</p>
+        </div>
+
+        <div id="student3">
+            <h2>Student 3</h2>
+            <p>This is the content for Student 3.</p>
+        </div>
     </div>
 
-    <!-- Content for each student -->
-    <div id="student1">
-        <h2>Student 1</h2>
-        <p>This is the content for Student 1.</p>
-    </div>
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <div id="student2">
-        <h2>Student 2</h2>
-        <p>This is the content for Student 2.</p>
-    </div>
-
-    <div id="student3">
-        <h2>Student 3</h2>
-        <p>This is the content for Student 3.</p>
-    </div>
-
-    <script>//Added Clock Function Aldrich LIM
+    <script>
         function updateClock() {
             var now = new Date();
-            var hours = now.getHours().toString().padStart(2, '0');
-            var minutes = now.getMinutes().toString().padStart(2, '0');
-            var seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('clock').textContent = hours + ":" + minutes + ":" + seconds;
+            var hours = now.getHours() % 12; // Convert to 12-hour format
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            var hourDeg = (hours + minutes / 60) * 30; // 30 degrees per hour
+            var minuteDeg = minutes * 6; // 6 degrees per minute
+            var secondDeg = seconds * 6; // 6 degrees per second
+
+            document.getElementById('hourHand').style.transform = `translate(-50%, -100%) rotate(${hourDeg}deg)`;
+            document.getElementById('minuteHand').style.transform = `translate(-50%, -100%) rotate(${minuteDeg}deg)`;
+            document.getElementById('secondHand').style.transform = `translate(-50%, -100%) rotate(${secondDeg}deg)`;
         }
 
         updateClock();
         setInterval(updateClock, 1000);
     </script>
 </body>
+
 </html>
