@@ -6,17 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P3-Project</title>
     <style>
-        .image-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            background-image: url('Main_H1.jpg');
-            background-size: cover;
-            opacity: 0.5;
-        }
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -455px; /* Shift up by reducing margin */
+    width: 100%;
+    height: 345px; /* Adjust height as needed */
+    z-index: 0; /* Set z-index to ensure it's behind */
+}
 
+.image-container2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the container takes up the full width */
+    height: 475px; /* Adjust height as needed */
+    z-index: 1; /* Set a higher z-index to bring it in front */
+}
+
+.slides {
+    width: 1000px; /* Set width to 1000px */
+    height: 475px; /* Set height to 475px */
+    object-fit: cover;
+}   
+
+.dot-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
         .address-container {
             position: fixed;
             top: 80%;
@@ -159,7 +200,7 @@
             left: 10px;
             background-color: rgb(173, 175, 173);
             padding: 10px;
-            width: 200px;
+            width: 250px;
         }
        
         input {
@@ -209,12 +250,11 @@
     <div class="project-subheading">
         We have gained extensive knowledge in Programming 3, particularly in HTML, CSS, and Javascript. This comprehensive understanding has empowered us to comprehend the intricacies of website development, enabling us to create websites independently.
     </div>
-
-    <div class="image-container">
+    
+    <div class="image-container2">
         <img class="slides active" src="BCA_1.jpg" alt="BCA_1" width="1000" height="475">
         <img class="slides" src="BCA_2.jpg" alt="BCA_2" width="1000" height="475">
         <img class="slides" src="BCA_3.jpg" alt="BCA_3" width="1000" height="475">
-
         <ul class="dot-container">
             <li class="dot" onclick="currentSlide(1)"></li>
             <li class="dot" onclick="currentSlide(2)"></li>
@@ -235,21 +275,7 @@
             <p>Address: BCA BRADDELL CAMPUS 200 BRADDELL ROAD SINGAPORE 579700</p>
         </div>
 
-        <div id="student1">
-            <h2>Student 1</h2>
-            <p>Aldin Lim's Resume</p>
-        </div>
-
-        <div id="student2">
-            <h2>Student 2</h2>
-            <p>Aldrich Lim's Resume.</p>
-        </div>
-
-        <div id="student3">
-            <h2>Student 3</h2>
-            <p>Wesley Tang's Resume</p>
-        </div>
-    </div>
+    
 
     <!-- Currency Converter done by Aldrich -->
     <div class="converter-container">
