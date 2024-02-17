@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aldrich Lim - Resume</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #2c3e50; 
+      color: #fff; 
+      max-width: 21cm;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #3498db;
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    section {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      padding: 20px;
+      background-color: #34495e; 
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    section img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #3498db;
+      font-size: 24px; 
+    }
+
+    p {
+      margin: 0;
+      color: #ecf0f1; 
+      overflow: hidden;
+      max-height: 60px;
+      transition: max-height 0.3s ease-in-out;
+      font-size: 18px; 
+    }
+
+    section:hover p {
+      max-height: 1000px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+      color: #ecf0f1; 
+    }
+
+    
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #3498db, #34495e); 
+      z-index: -1;
+    }
+
+    section:nth-child(even)::before {
+      background: linear-gradient(to right, #34495e, #3498db); 
+    }
+
+    
+    .skill-stars {
+      display: flex;
+      align-items: center;
+      color: #f1c40f; 
+      font-size: 20px; 
+    }
+
+    .filled-star::before {
+      content: '\2605'; 
+      margin-right: 5px;
+    }
+
+    .hollow-star::before {
+      content: '\2606'; 
+      margin-right: 5px;
+    }
+
+   
+    .return-button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .return-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Aldrich Lim</h1>
+    <p>BIM Modeller</p>
+  </header>
+
+  
+  <button class="return-button" onclick="returnToMainPage()">Return to Main Page</button>
+
+  <section>
+    <div>
+      <img src="Alder.png" alt="Your Photo">
+    </div>
+    <div>
+      <h2>Education</h2>
+      <h3><strong>Diploma in Digital Engineering</strong></h3>
+      <p><strong>School:</strong> Building Construction Authority Academy</p>
+      <p><strong>Duration:</strong> 2021 - 2024</p>
+      <p><strong>Description:</strong> This program is designed to equip students with the knowledge of using 3D technology in the building industry. It covers fundamental knowledge of the building lifecycle with Building Information Modelling (BIM). Students will focus on BIM application for design analysis, productive design and construction coordination, and facility management. Students will also build a good foundation in various IT software, web application, digital media, and 3D presentation.</p>
+    </div>
+  </section>
+
+ 
+  <section>
+    <div>
+      <h2>Achievements</h2>
+      <ul>
+        <li>Won Robotic Competition - Picomouse</li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section>
+    <div>
+      <h2>Skills</h2>
+      <div class="skill-stars">
+        <span class="filled-star"></span>
+        <span class="filled-star"></span>
+        <span class="hollow-star"></span>
+        <span class="hollow-star"></span>
+        <span class="hollow-star"></span>
+        <span class="skill-name">HTML</span>
+      </div>
+      <div class="skill-stars">
+        <span class="filled-star"></span>
+        <span class="filled-star"></span>
+        <span class="hollow-star"></span>
+        <span class="hollow-star"></span>
+        <span class="hollow-star"></span>
+        <span class="skill-name">CSS</span>
+      </div>
+      <div class="skill-stars">
+        <span class="filled-star"></span>
+        <span class="filled-star"></span>
+        <span class="hollow-star"></span>
+        <span class="hollow-star"></span>
+        <span class="hollow-star"></span>
+        <span class="skill-name">JavaScript</span>
+      </div>
+    
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <h2>References</h2>
+      <p>Available upon request</p>
+    </div>
+  </section>
+
+  <script>
+    
+    function returnToMainPage() {
+      window.location.href = "Assg_3.html"; 
+    }
+  </script>
+
+</body>
+</html>

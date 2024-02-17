@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript: Adding Interactivity</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: #339933;
+            padding: 20px;
+            color: #fff;
+        }
+
+        section {
+            margin-top: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #339933;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        /* New button styles */
+        .return-button {
+            padding: 10px 20px;
+            background-color: #339933;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .return-button:hover {
+            background-color: #267326;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript: Adding Interactivity</h1>
+    </header>
+
+    <!-- New "Return to Main Page" button -->
+    <button class="return-button" onclick="returnToMainPage()">Return to Main Page</button>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>JavaScript is a versatile scripting language that enables the creation of dynamic and interactive content on
+            web pages. It is commonly used for client-side scripting to enhance user experience.</p>
+    </section>
+
+    <section id="uses">
+        <h2>Uses of JavaScript</h2>
+        <ul>
+            <li>**Dynamic Content:** JavaScript allows for the dynamic updating and manipulation of HTML content,
+                providing a more interactive user experience.</li>
+            <li>**Form Validation:** It can be used to validate user input in forms, ensuring data accuracy before
+                submission.</li>
+            <li>**Event Handling:** JavaScript handles user interactions, such as clicks and keypresses, to trigger
+                specific actions on a web page.</li>
+            <li>**AJAX:** Asynchronous JavaScript and XML enable the seamless exchange of data with a web server,
+                updating parts of a page without requiring a full reload.</li>
+            <li>**Animations:** JavaScript is used to create animations and transitions, making web pages more
+                engaging.</li>
+        </ul>
+    </section>
+
+    <div class="image-container">
+        <img src="jspht.png" alt="JavaScript Image 1">
+        <img src="codeJSpht.png" alt="JavaScript Image 2">
+    </div>
+
+    <footer>
+        <p>Credit: Wesley Tang</p>
+    </footer>
+
+    <script>
+        // JavaScript function to handle the "Return to Main Page" button
+        function returnToMainPage() {
+            window.location.href = "Assg_3.html"; // Replace with your main page URL
+        }
+    </script>
+
+</body>
+
+</html>

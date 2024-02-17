@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: Styling Web Pages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: #cc6633;
+            padding: 20px;
+            color: #fff;
+        }
+
+        section {
+            margin-top: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #cc6633;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        /* New button styles */
+        .return-button {
+            padding: 10px 20px;
+            background-color: #cc6633;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .return-button:hover {
+            background-color: #996633;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS: Styling Web Pages</h1>
+    </header>
+
+    <!-- New "Return to Main Page" button -->
+    <button class="return-button" onclick="returnToMainPage()">Return to Main Page</button>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the look and formatting of a
+            document written in HTML. It enhances the visual presentation and layout of web pages.</p>
+    </section>
+
+    <section id="uses">
+        <h2>Uses of CSS</h2>
+        <ul>
+            <li>**Styling:** CSS is used to style the visual presentation of HTML elements, including fonts, colors,
+                spacing, and layout.</li>
+            <li>**Responsive Design:** CSS helps create responsive and mobile-friendly web pages by adjusting styles
+                based on the device's screen size.</li>
+            <li>**Animations and Transitions:** CSS allows for the creation of animations and smooth transitions,
+                enhancing user experience.</li>
+            <li>**Consistency:** CSS enables the consistent styling of multiple web pages, ensuring a unified look and
+                feel.</li>
+            <li>**Flexibility:** CSS provides flexibility in design, allowing developers to create diverse and
+                visually appealing websites.</li>
+        </ul>
+    </section>
+
+    <div class="image-container">
+        <img src="csspht.png" alt="CSS Image 1">
+        <img src="codecsspht.png" alt="CSS Image 2">
+    </div>
+
+    <footer>
+        <p>Credit: Aldrich Lim June Yu</p>
+    </footer>
+
+    <script>
+        // JavaScript function to handle the "Return to Main Page" button
+        function returnToMainPage() {
+            window.location.href = "Assg_3.html"; // Replace with your main page URL
+        }
+    </script>
+
+</body>
+
+</html>

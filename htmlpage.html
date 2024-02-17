@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML: Overview and Uses</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: #3366cc;
+            padding: 20px;
+            color: #fff;
+        }
+
+        section {
+            margin-top: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #3366cc;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        /* New button styles */
+        .return-button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .return-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML: Overview and Uses</h1>
+    </header>
+
+    <!-- New "Return to Main Page" button -->
+    <button class="return-button" onclick="returnToMainPage()">Return to Main Page</button>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the
+            structure of a web page using markup elements to represent headings, paragraphs, links, images, and other
+            elements.</p>
+    </section>
+
+    <section id="uses">
+        <h2>Uses of HTML</h2>
+        <ul>
+            <li>**Website Structure:** HTML provides the basic structure and layout of a website, defining elements such
+                as headings, paragraphs, lists, and more.</li>
+            <li>**Hyperlinking:** HTML allows you to create hyperlinks, enabling navigation between different pages and
+                resources on the web.</li>
+            <li>**Image Embedding:** Images can be embedded into web pages using HTML, enhancing visual content.</li>
+            <li>**Forms:** HTML includes form elements for collecting user input, such as text fields, checkboxes, and
+                buttons.</li>
+            <li>**Multimedia Integration:** HTML supports embedding multimedia elements like audio and video.</li>
+        </ul>
+    </section>
+
+    <div class="image-container">
+        <img src="htmlpht.png" alt="Image 1">
+        <img src="codehtmlpht.png" alt="Image 2">
+    </div>
+
+    <footer>
+        <p>Made by Aldin Lim June Yien</p>
+    </footer>
+
+    <script>
+        // JavaScript function to handle the "Return to Main Page" button
+        function returnToMainPage() {
+            window.location.href = "Assg_3.html"; // Replace with your main page URL
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldin Lim's CV</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .photo {
+            text-align: center;
+        }
+
+        .photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .summary-container,
+        .experience-container,
+        .education-container,
+        .skills-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary,
+        .experience,
+        .education,
+        .skills {
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .navigation {
+            text-align: center;
+        }
+
+        .navigation button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation button:hover {
+            background-color: #555;
+        }
+
+        .content {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .content p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Aldin Lim</h1>
+            <p>Curriculum Vitae</p>
+        </div>
+        <div class="photo">
+            <img src="dindin.jpeg" alt="Aldin Lim">
+        </div>
+        <div class="summary-container">
+            <div class="summary">
+                <p><strong>Summary:</strong> Highly motivated and results-driven professional with a proven track record in Engineering. Possessing a unique blend of skills, I excel in leadership to drive innovation and achieve strategic goals. With 4 years of experience in Digital engineering, I bring a dedication to delivering exceptional results while adapting swiftly to dynamic challenges. A passionate team player known for listening to others, I am committed to contribute effectively to company success.</p>
+            </div>
+        </div>
+        <div class="navigation">
+            <button id="experience-btn">Experience</button>
+            <button id="education-btn">Education</button>
+            <button id="skills-btn">Skills</button>
+            <a href="Assg_3.html"><button id="mainpage-btn">Return to Main Page</button></a>
+        </div>
+        <div class="experience-container" id="experience-section" style="display: none;">
+            <div class="experience">
+                <h2>Experience</h2>
+                <ol>
+                    <li>Digital System Design: Designing and developing digital systems, including RTL coding, synthesis, verification, and debugging.</li>
+                    <li>FPGA/ASIC Development: Experience in FPGA/ASIC development, from architecture design to implementation and testing.</li>
+                    <li>Embedded Systems: Working with embedded systems, programming, and integrating hardware and software components.</li>
+                    <li>Hardware Description Languages (HDLs): Proficiency in HDLs such as Verilog, VHDL, or SystemVerilog for digital design.</li>
+                    <li>Simulation and Verification: Conducting simulations, test bench development, and verification methodologies like UVM (Universal Verification Methodology).</li>
+                </ol>
+            </div>
+        </div>
+        <div class="education-container" id="education-section" style="display: none;">
+            <div class="education">
+                <h2>Education</h2>
+                <ul>
+                    <li>NITEC</li>
+                    <li>HNITEC</li>
+                    <li>BCA ACADEMY</li>
+                </ul>
+            </div>
+        </div>
+        <div class="skills-container" id="skills-section" style="display: none;">
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>AUTOCAD</li>
+                    <li>REVIT</li>
+                    <li>NAVISWORK</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <p><strong>Name:</strong> Aldin Lim</p>
+            <p><strong>Email:</strong> aldintlim@hotmail.com</p>
+            <p><strong>Phone:</strong> +1234567890</p>
+            <p><strong>Address:</strong> Singapore</p>
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript for navigation here
+        document.getElementById('experience-btn').addEventListener('click', function() {
+            var experienceSection = document.getElementById('experience-section');
+            var educationSection = document.getElementById('education-section');
+            var skillsSection = document.getElementById('skills-section');
+            if (experienceSection.style.display === 'none') {
+                experienceSection.style.display = 'block';
+                educationSection.style.display = 'none';
+                skillsSection.style.display = 'none';
+            } else {
+                experienceSection.style.display = 'none';
+            }
+        });
+
+        document.getElementById('education-btn').addEventListener('click', function() {
+            var experienceSection = document.getElementById('experience-section');
+            var educationSection = document.getElementById('education-section');
+            var skillsSection = document.getElementById('skills-section');
+            if (educationSection.style.display === 'none') {
+                experienceSection.style.display = 'none';
+                educationSection.style.display = 'block';
+                skillsSection.style.display = 'none';
+            } else {
+                educationSection.style.display = 'none';
+            }
+        });
+
+        document.getElementById('skills-btn').addEventListener('click', function() {
+            var experienceSection = document.getElementById('experience-section');
+            var educationSection = document.getElementById('education-section');
+            var skillsSection = document.getElementById('skills-section');
+            if (skillsSection.style.display === 'none') {
+                experienceSection.style.display = 'none';
+                educationSection.style.display = 'none';
+                skillsSection.style.display = 'block';
+            } else {
+                skillsSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
