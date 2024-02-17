@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: -455px; /* Shift up by reducing margin */
-    width: 100%;
+    width: 75%;
     height: 345px; /* Adjust height as needed */
     z-index: 0; /* Set z-index to ensure it's behind */
 }
@@ -66,9 +66,26 @@
             color: black;
             padding: 10px;
             font-weight: bold;
-            width: 150px; /* Adjust the width to make it a square */
+            width: 150px;
             text-align: center;
         }
+        
+        .programming-box {
+    left: 10px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 150px; 
+    bottom: 10px; 
+    padding: 10px;
+    font-weight: bold;
+    width: 150px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+        
 
         h4 {
             font-size: 40px;
@@ -194,11 +211,12 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
- /* Currency Converter Box */
+
  .converter-container {
-            bottom: 10px;
+            height: 300px; ;
+            bottom: 300px;
             left: 10px;
-            background-color: rgb(173, 175, 173);
+            background-color: rgb(228, 176, 176);
             padding: 10px;
             width: 250px;
         }
@@ -241,9 +259,9 @@
     </div>
 
     <div class="navbar">
-        <a href="#student1">Student 1</a>
-        <a href="#student2">Student 2</a>
-        <a href="#student3">Student 3</a>
+        <a href="Aldrich_Lim.html">Aldrich Lim</a>
+        <a href="Aldin_Lim.html">Aldin_Lim</a>
+        <a href="Wesley_Tang.html">Wesley_Tang</a>
     </div>
 
     <div class="project-heading">Programming-3 Final Group Project</div>
@@ -252,21 +270,41 @@
     </div>
     
     <div class="image-container2">
-        <img class="slides active" src="BCA_1.jpg" alt="BCA_1" width="1000" height="475">
-        <img class="slides" src="BCA_2.jpg" alt="BCA_2" width="1000" height="475">
-        <img class="slides" src="BCA_3.jpg" alt="BCA_3" width="1000" height="475">
+        <div class="media-container">
+            <img class="slides active" src="BCA_1.jpg" alt="BCA_1" width="1000" height="475">
+            <img class="slides" src="BCA_2.jpg" alt="BCA_2" width="1000" height="475">
+            <img class="slides" src="BCA_3.jpg" alt="BCA_3" width="1000" height="475">
+        </div>
+        <div class="media-container">
+            <video class="slides" width="1000" height="475" controls>
+                <source src="wes.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video class="slides" width="1000" height="475" controls>
+                <source src="din.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video class="slides" width="1000" height="475" controls>
+                <source src="rich.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <ul class="dot-container">
             <li class="dot" onclick="currentSlide(1)"></li>
             <li class="dot" onclick="currentSlide(2)"></li>
             <li class="dot" onclick="currentSlide(3)"></li>
+            <li class="dot" onclick="currentSlide(4)"></li>
+            <li class="dot" onclick="currentSlide(5)"></li>
+            <li class="dot" onclick="currentSlide(6)"></li>
         </ul>
     </div>
+    
 
     <div class="programming-box">
         <div>Programming 3</div>
-        <a href="#html">HTML</a>
-        <a href="#css">CSS</a>
-        <a href="#javascript">JavaScript</a>
+        <a href="htmlpage.html">HTML</a>
+        <a href="csspage.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
     </div>
 
     <!-- Add your Resume!! Done By Aldin -->
@@ -274,7 +312,7 @@
         <div class="address-container">
             <p>Address: BCA BRADDELL CAMPUS 200 BRADDELL ROAD SINGAPORE 579700</p>
         </div>
-
+       
     
 
     <!-- Currency Converter done by Aldrich -->
@@ -288,17 +326,40 @@
         <button onclick="convertCurrency()">Calculate</button>
     </div>
 <!-- Done by Aldrich, Aldin and Wesley-->
-    <script>
-        function currentSlide(n) {
-            var slides = document.getElementsByClassName("slides");
-            var dots = document.getElementsByClassName("dot");
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
-            }
-            slides[n - 1].classList.add("active");
-            dots[n - 1].classList.add("active");
+<script>
+        let currentMediaIndex = 1;
+
+function currentSlide(n) {
+    var slides = document.getElementsByClassName("slides");
+    var dots = document.getElementsByClassName("dot");
+
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+        slides[i].style.display = 'none';
+        if (slides[i].tagName === 'VIDEO') {
+            slides[i].pause();
         }
+    }
+
+    currentMediaIndex = n;
+    slides[currentMediaIndex - 1].classList.add("active");
+    dots[currentMediaIndex - 1].classList.add("active");
+    slides[currentMediaIndex - 1].style.display = 'block';
+    if (slides[currentMediaIndex - 1].tagName === 'VIDEO') {
+        slides[currentMediaIndex - 1].play();
+    }
+}
+
+    function changeMedia(direction) {
+        currentMediaIndex += direction;
+        if (currentMediaIndex < 1) {
+            currentMediaIndex = 6;
+        } else if (currentMediaIndex > 6) {
+            currentMediaIndex = 1;
+        }
+        currentSlide(currentMediaIndex);
+    }
 
         function updateClock() {
             var now = new Date();
@@ -331,7 +392,24 @@
         }
 
         setInterval(updateClock, 1000);
+    
     </script>
 </body>
+<style>
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 4px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+</head>
 
+<footer>
+    
+    Acknowledgment: Thanks for the Internet for making this Work Possible and also to ChatGPT XD
+</footer>
 </html>
