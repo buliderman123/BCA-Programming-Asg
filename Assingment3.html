@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P3-Project</title>
     <style>
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            background-image: url('Main_H1.jpg');
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .address-container {
+            position: fixed;
+            top: 80%;
+            right: 10px;
+            background-color: lightblue;
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            width: 150px; /* Adjust the width to make it a square */
+            text-align: center;
+        }
+
         h4 {
             font-size: 40px;
             font-family: 'Arial Narrow', sans-serif;
@@ -31,8 +55,13 @@
         }
 
         @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         .navbar {
@@ -99,26 +128,64 @@
             color: rgb(14, 13, 13);
         }
 
-        .image-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
         .slides {
             max-width: 100%;
             max-height: 100%;
             display: none;
-            margin: 0 auto; /* Center the images horizontally */
+            margin: 0 auto; 
         }
 
         .slides.active {
             display: block;
         }
+
+        #students-container {
+            margin-top: 20px;
+        }
+
+        .project-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-subheading {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+ /* Currency Converter Box */
+ .converter-container {
+            bottom: 10px;
+            left: 10px;
+            background-color: rgb(173, 175, 173);
+            padding: 10px;
+            width: 200px;
+        }
+       
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
     <div class="clock-container">
         <div class="clock" id="clock"></div>
@@ -138,6 +205,11 @@
         <a href="#student3">Student 3</a>
     </div>
 
+    <div class="project-heading">Programming-3 Final Group Project</div>
+    <div class="project-subheading">
+        We have gained extensive knowledge in Programming 3, particularly in HTML, CSS, and Javascript. This comprehensive understanding has empowered us to comprehend the intricacies of website development, enabling us to create websites independently.
+    </div>
+
     <div class="image-container">
         <img class="slides active" src="BCA_1.jpg" alt="BCA_1" width="1000" height="475">
         <img class="slides" src="BCA_2.jpg" alt="BCA_2" width="1000" height="475">
@@ -150,24 +222,46 @@
         </ul>
     </div>
 
-    <!-- Content for each student -->
+    <div class="programming-box">
+        <div>Programming 3</div>
+        <a href="#html">HTML</a>
+        <a href="#css">CSS</a>
+        <a href="#javascript">JavaScript</a>
+    </div>
+
+    <!-- Add your Resume!! Done By Aldin -->
     <div id="students-container">
+        <div class="address-container">
+            <p>Address: BCA BRADDELL CAMPUS 200 BRADDELL ROAD SINGAPORE 579700</p>
+        </div>
+
         <div id="student1">
             <h2>Student 1</h2>
-            <p>This is the content for Student 1.</p>
+            <p>Aldin Lim's Resume</p>
         </div>
 
         <div id="student2">
             <h2>Student 2</h2>
-            <p>This is the content for Student 2.</p>
+            <p>Aldrich Lim's Resume.</p>
         </div>
 
         <div id="student3">
             <h2>Student 3</h2>
-            <p>This is the content for Student 3.</p>
+            <p>Wesley Tang's Resume</p>
         </div>
     </div>
 
+    <!-- Currency Converter done by Aldrich -->
+    <div class="converter-container">
+        <input type="number" id="amount" placeholder="Enter amount">
+        <select id="currency">
+            <option value="kyat">Myanmar Kyat</option>
+            <option value="yuan">Chinese Yuan</option>
+            <option value="ringgit">Malaysia Ringgit</option>
+        </select>
+        <button onclick="convertCurrency()">Calculate</button>
+    </div>
+<!-- Done by Aldrich, Aldin and Wesley-->
     <script>
         function currentSlide(n) {
             var slides = document.getElementsByClassName("slides");
@@ -188,7 +282,30 @@
             document.getElementById('clock').textContent = hours + ":" + minutes + ":" + seconds;
         }
 
+        function convertCurrency() {
+            var amount = document.getElementById('amount').value;
+            var currency = document.getElementById('currency').value;
+            var result;
+
+            switch (currency) {
+                case 'kyat':
+                    result = amount * 1556.11;
+                    break;
+                case 'yuan':
+                    result = amount * 5.27;
+                    break;
+                case 'ringgit':
+                    result = amount * 3.54;
+                    break;
+                default:
+                    result = 'Invalid currency';
+            }
+
+            alert('Converted Amount: ' + result.toFixed(2));
+        }
+
         setInterval(updateClock, 1000);
     </script>
 </body>
+
 </html>
